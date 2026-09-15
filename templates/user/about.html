@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block abc %}
+<!-- About section start -->
+       <!-- About startttt -->
+       <div class="row about my-4 p-0">
+        <div class="col-sm-12  ">
+            <h4 class="heading text-center my-3 ">Our Story</h4>
+             <div class="row">
+                <div class="col-sm-6 p-4">
+                    <img src="{% static 'images/resta1.avif' %}" alt="" class="img-fluid img2">
+                    
+                        <img src="{% static 'images/resta1.avif' %}" alt="" class="img-fluid img3">
+                </div>
+                <div class="col-sm-6 p-4">
+                    <h1 style="word-spacing: 10px;">We Invite You to Visit <br>Our <b class="h">Food Restaurant</b></h1>
+                     <p style="font-size: 20px;">Welcome to Buy Basket,your one-stop destination for convenient and hassle-free online shopping. </p>
+                     <p style="font-size: 20px; margin-top: -10px;">We provide a wide range of products at affordable prices with an easy-to-use shopping </p>
+                     <i class="fa-solid fa-leaf   m-0 icon1"></i> <span class="fw-bold fs-5" style="margin-left: 10px;">100% Fresh Ingredients</span>
+                     <p class="para2">We source locally and sustainably Every ingredients is hand daily for maximum freshness.</p>
+                      
+                     <i class="fa-solid fa-award   m-0 icon1"></i> <span class="fw-bold fs-5" style="margin-left: 10px;">Award -Winning Recipes</span>
+                     <p class="para2">Our signature recipes have won national culinary awards 5 years in a row.</p>
+                      
+                     <i class="fa-solid fa-truck-fast  m-0 icon1"></i> <span class="fw-bold fs-5" style="margin-left: 10px;">Lighting-Fast Delivery</span>
+                     <p class="para2">Order online and get hot, fresh food at your door in under 25 minutes guranteed.</p>
+                     <a href="{% url 'menu' %}"><button class="btn btn-danger h text-light fw-bold rounded-pill"><i class="fa-solid fa-eye text-light p-2 m-0  "></i>View Full Menu</button></a> 
+                 
+                     
+                </div>
+                 </div>
+               
+            
+             </div>
+           
+        </div>
+         
+     
+        
+      <!-- About section enddd -->
+     
+      
+{% endblock %}

@@ -1,0 +1,366 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <style>
+       .header,.menu{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+       }
+        body{
+            background-color: antiquewhite;
+            padding-top: 140px;
+            overflow-x: hidden;
+        }
+        .head{
+             font-size: 70px;
+             
+        }
+        .header{
+            background-color: black;
+            padding-left: 6%;
+            color: white;
+            padding: 5px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .fa-solid{
+            color: orangered;
+            margin-left: 3%;
+        }
+        .t1 .fa-solid{
+            background-color: #ee4f1e;
+            color: white;
+            font-size: 40px;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0px 0px 20px #ee4f1e;
+        }
+       .t .fa-brands{
+            color: white;
+            margin-left: 10%;
+           font-size: 20px;
+           border: 1px solid #ee4f1e;
+           text-align: center;
+           height: 28px;
+           width: 28px;
+           color: #ee4f1e;
+          border-radius: 10px;
+           line-height: 28px;
+           transition: all .8s;
+        }
+.t .fa-brands:hover{
+       transform: rotate(360deg);
+       transition: all .8s;
+       background-color: #ee4f1e;
+       color: white;
+}
+   .t .i1:hover{
+       transform: rotate(360deg);
+       transition: all .8s;
+       background-color: blue;
+       color: white;
+       border: none;
+}     .para{
+            padding-left: 10%;
+            border: 2px solid red;
+           height: 30px;
+           width: 30px;
+           line-height: 14px;
+           padding: 2%;
+        }
+        
+        .menu{
+            background-color: white;
+            padding: 1%;
+            position: fixed;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar-brand{
+            text-decoration: none;
+            transition: all .9s;
+        }
+        
+        .navbar-brand:hover{
+           border-bottom: 4px solid #ee4f1e;
+           transition: all .9s;
+        }
+       .btn{
+        background-color: #ee4f1e;
+       }
+      .slider{
+        background-image: url("/static/images/img2.avif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: .5px;
+      }
+       .h{
+        color: #ee4f1e;
+       }
+       .para1{
+          word-spacing: 10px;
+       }
+       .para2{
+        margin-left:70px ;
+        margin-top: -10px;
+       }
+       .img1{
+        border-radius: 50%;
+        
+       
+       }
+       
+       .explore{
+        border-radius: 20px;
+       }
+       .heading{
+           color: #ee4f1e;
+           font-family:'Courier New', Courier, monospace;
+           font-weight: bold;
+           font-size: 30px;
+           
+       }
+       .ct{
+        border-radius: 20%;
+       }
+       .about .about1{
+        margin-left: 20px;
+        
+       }
+       .img2{
+        border-radius: 10%;
+        box-shadow: 0px 0px 10px grey;
+       }
+       .img3{
+        position: relative;
+        bottom: 20%;
+        right: 0px;
+        left: 40%;
+        max-height: 30%;
+        border-radius: 30px;
+        border: 7px solid white;
+       }
+       .icon1{
+        font-size: 45px;
+        background-color: rgb(254, 233, 248);
+        color: #ee4f1e;
+        transform: translateY(20px);
+        border-radius: 10px;
+        padding: 1%;
+       }
+       /* Chota wala div lagatar move karne ke liye */
+       .menu_slider{
+        width: 100%;
+        overflow: hidden;
+       }
+       .menu_div{
+         width: 100%;
+        overflow: hidden;
+       }
+      .menu_div ul{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+       gap: 40px;
+       width: max-content;
+       margin: 0;
+       padding: 12px 20px;
+       white-space: nowrap;
+       animation: move 50s linear infinite;
+       }
+       
+      .menu_div ul  li{
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+       @keyframes move{
+        from{
+            transform: translateX(100%);
+        }
+        to{
+            transform: translateX(-100%);
+        }
+       }
+       /* Footer icon ke liye */
+       .icon2{
+        font-size: 25px;
+        margin-right: 20px;
+       
+        padding: 10px;
+        box-shadow: 0px 0px 10px black;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+       }
+       .fpara{
+        position: relative;
+        top: -15px;
+        
+       
+       }
+       .menuh{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       }
+       .btn1 .btn{
+          background-color: white;
+       }
+       .btn1 .btn:hover{
+        background-color: #ee4f1e;
+       }
+        .card{
+           transition: transform 0.5s ease  !important;
+        
+       }
+        .card:hover{
+        transform: translateY(-10px) scale(1.05) !important;
+       }
+       .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    
+}
+.icons{
+    display: flex;
+    
+}
+.form1{
+    width: 100%;
+    max-width: 50%;
+}
+/* #formreview{
+    display: none;
+} */
+.open1{
+       margin-left: 37%;
+       border-radius: 20px;
+         box-shadow: 0px 0px 10px grey;
+}
+
+.card11{
+    width: 100%;
+    max-width:30%;
+    margin: auto;
+  box-shadow: 3px 3px 8px grey, -3px -3px 8px grey;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Small header starttttt -->
+       <div class="row header">
+        <div class="col-sm-6">
+            <i class="fa-solid fa-phone fa-spin "></i> <b>+919923456789</b>
+            <i class="fa-solid fa-envelope fa-spin"></i> <b>k@gmail.com</b>
+            <i class="fa-solid fa-location-dot fa-spin"></i> <b>sector-5 Vikas Nager Lucknow</b>
+        </div>
+       
+        <div class="col-sm-6 t">
+            <i class="fa-brands fa-facebook i1"></i>
+            <i class="fa-brands fa-instagram "></i>
+            <i class="fa-brands fa-youtube "></i>
+            <i class="fa-brands fa-linkedin i1 "></i>
+        </div>
+       </div>
+        <!-- Small header enddd -->
+         <!-- Menuuuuu start    -->
+         <div class="row menu shadow-lg">
+        
+         
+            <div class="col-sm-4 t1 menu1">
+               <i class="fa-solid fa-plate-wheat fa-spin"></i> <span style="font-size: 25px; font-weight: bold; position: relative; top: -10px;">Buy<b style="color: #ee4f1e;">Basket</b></span>
+              
+               <p style="padding-left: 75px; margin-top: -18px; letter-spacing: 1px; font-family: Calibri;">An E-Commerce Based Food Ordering System</p>
+            </div>
+           
+            <div class="col-sm-8 ">
+                 <nav class="navbar  ">
+     
+          <a href="{% url 'home' %}" class="navbar-brand  ">Home</a>
+          <a href="{% url 'about' %}" class="navbar-brand">About</a>
+          <a href="{% url 'menu' %}" class="navbar-brand">Menu</a>
+          <a href="{% url 'reservation' %}" class="navbar-brand">Reservation</a>
+          <a href="{% url 'review' %}" class="navbar-brand">Reviews</a>
+          <a href="{% url 'contact' %}" class="navbar-brand">Contact</a>
+          
+    <a href="{% url 'login' %}">
+   
+    <button class="btn btn-warning text-light fw-bold"><span>Order Now</span> </button>
+    
+  </a>
+</nav>
+            </div>
+             
+            </div>
+       <!-- Menuuuuu endddd    -->
+         {% block abc %}
+
+         {% endblock %}
+      
+    
+        <!-- Footer starttttt -->
+         <div class="row bg-dark">
+            <div class="col-sm-10 mx-auto  text-light">
+               <div class="row">
+                <div class="col-sm-3 p-3">
+                    <b style="font-size: 30px;">Buy<span class="h">Basket</span></b>
+               <p>We bring the world's finest flavors together in a fast, friendly and affordable 
+                experience. Every meal crafted with love.</p>
+                <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-facebook icon2"></i></a> 
+           <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-instagram icon2"></i></a> 
+            <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-youtube icon2"></i></a> 
+           <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-linkedin  icon2"></i></a> 
+                </div>
+                <div class="col-sm-3 p-3">
+                    <b style="border-bottom: 4px solid #ee4f1e; font-size: 20px;">Quick Links</b> <br>
+                    <br>
+                    <a href="{% url 'home' %}" style="text-decoration: none; color: white;"><b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Home</a> <br>
+                    <a href="{% url 'about' %}" style="text-decoration: none; color: white;"><b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>About us</a> <br> 
+                    <a href="{% url 'menu' %}" style="text-decoration: none; color: white;"><b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Menu</a> <br>
+                    <a href="{% url 'reservation' %}" style="text-decoration: none; color: white;"><b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Reservation</a> <br>
+                    <a href="{% url 'contact' %}" style="text-decoration: none; color: white;"><b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Contact</a>
+                </div>
+                <div class="col-sm-3 p-3">
+                    <b style="border-bottom: 4px solid #ee4f1e; font-size: 20px;">Our Menu</b> <br>
+                    <br>
+                    <b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Burgers <br>
+                    <b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Pizza <br> 
+                    <b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Wraps & Rolls<br>
+                    <b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Pasta<br>
+                    <b class="h" style="margin-right: 2px; font-size: 20px;">&gt;</b>Desserts
+                </div>
+                
+                <div class="col-sm-3 p-3">
+                     <b style="border-bottom: 4px solid #ee4f1e; font-size: 20px;">Get In Touch</b> <br>
+                    <br>
+                     <i class="fa-solid fa-location-dot icon2 "></i> <span class="fpara ">Address - Vikas Nagar <span style="margin-left: 70px;">Sector-5 Lucknow</span></span>
+             <br>
+          <i class="fa-solid fa-phone icon2 my-2"></i><span class="fpara ">Phone-(+91 90887766554)</span> <br>
+           <i class="fa-solid fa-envelope icon2 my-2"></i><span class="fpara ">Email-hello@123gmail.com</span> <br>
+          <i class="fa-solid fa-clock  icon2 my-2"></i><span class="fpara ">Hours</span><br>
+                </div>
+                </div>
+               </div>
+               <hr style="color: white;">
+               </div>
+               <!-- Footer Enddddd -->
+            </div>
+         
+         
+       
+    <!-- </div> -->
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block abc %}
+ <!-- Menu Sectionnnn startttt -->
+        <div class="row my-4">
+            <h3 class="h text-center menuh">What's Cooking</h3>
+            <h2 class="text-center"> Our Delicious <span class="h">Menu</span></h2>
+            <div class="col-sm-10 mx-auto text-center btn1">
+               <a href="{% url 'menu' %}"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('all')">All</button></a> 
+                <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('burger')"><img src="{% static 'images/burger.jpg' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+                <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('pizza')"><img src="{% static 'images/piza1.avif' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+              <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('pasta')"><img src="{% static 'images/pasta.avif' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+              <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('diserts')"><img src="{% static 'images/des1.avif' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+              <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('wraps')"><img src="{% static 'images/wraps1.avif' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+              <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('momoj')"><img src="{% static 'images/momo1.jpg' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+              <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('noodles')"><img src="{% static 'images/n1.avif' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+              <a href="javacript:void(0)"><button class=" btn btn-light rounded-pill m-4" onclick="filterFood('sandwitch')"><img src="{% static 'images/img4.avif' %}" alt="" class="img-fluid" style="width: 100%; max-width: 50px; max-height: 50px; border-radius: 50%;"></button></a>
+            </div>
+            
+        </div>
+        <div class="row mb-3">
+            {% for x in gdata %}
+            <div class="col-sm-4 card1 my-3" data-category="{{x.category}}">
+                <div class="card rounded-4 p-2">
+                    <img src="/{{x.image}}" alt="" class="img-fluid img-top rounded-4 img">
+                    <p style="margin-left: 10px;" class="h p-2">{{x.title}}</p>
+                    <span style="margin-top: -25px; margin-left: 10px; font-weight: bold;">{{x.title}}</span>
+                    <span style=" margin-left: 10px; "> {{x.description}}</span>
+                    <span class="h" style=" margin-left: 10px; font-weight: bold; font-size: 25px;">{{x.price}}<sub class="text-dark"><del>{{x.old_price}}</del></sub></span>
+                   <span style="margin-left: 10px; color: orange; font-size: 20px;">
+    {% for i in x.star_range %}
+        <i class="fa-solid fa-star"></i>
+    {% endfor %}
+</span>
+
+<span>
+    ({{x.rating}})
+</span>
+                    </div>
+            </div>
+            {% endfor %}
+
+      </div>
+      <!-- Menu Sectionnnn enddddd -->
+     <script>
+        function filterFood(category){
+let cards=document.querySelectorAll(".card1");
+   cards.forEach(function(card) {
+    if(category == "all") {
+        card.style.display = "block"
+    }
+    else if (card.dataset.category == category) {
+              card.style.display = "block";
+    } 
+    else {
+        card.style.display = "none"
+    }
+   })
+
+        }
+     </script>
+{% endblock %}

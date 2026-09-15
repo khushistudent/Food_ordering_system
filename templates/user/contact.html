@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block abc %}
+<!-- contact start  -->
+        <div class="row my-3">
+            <span class="h text-center " style="font-family: cursive; font-size: 30px; font-weight: bold;">Get In Touch</span>
+            <h1 class="text-center" style="font-size: 45px; font-weight: bold;">Contact <b class="h">Us</b></h1>
+            
+            <div class="col-sm-10 mx-auto text-center">
+                <p style="word-spacing: 10px;">Have a question, feedback, or want to plan a special event? <br> We'd love to hear from you.</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 mx-auto">
+                    <div class="row mb-3">
+                        <div class="col-sm-6 bg-dark text-light p-3" style="border-radius: 20px;">
+                            <span style="font-size: 25px;">Let's Talk</span>
+                            <p>We typically respond within 2 hours during business hours.</p>
+                            <br>
+                            <i class="fa-solid fa-location-dot"></i> <span style="font-size: 15px; font-weight: bold;">ADDRESS</span> <br><span style="margin-left:7%;">Lucknow Ring Road sector-5</span> <br> <br>
+                            <i class="fa-solid fa-phone"></i> <span style="font-size: 15px; font-weight: bold;">PHONE</span> <br><span style="margin-left:7%;">+1(800)123-4567</span> <br> <br>
+                            <i class="fa-solid fa-envelope"></i> <span style="font-size: 15px; font-weight: bold;">EMAIL</span> <br><span style="margin-left:7%;">hello@buysbasket.com</span> <br> <br>
+                            <i class="fa-solid fa-clock"></i> <span style="font-size: 15px; font-weight: bold;">WORKING HOURS</span> <br><span style="margin-left:7%;">Wed-Sun:9AM-11PM</span> <br> <br>
+                            <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-facebook icon2"></i></a> 
+                            <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-instagram icon2"></i></a> 
+                             <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-youtube icon2"></i></a> 
+                            <a href="" style="text-decoration: none; color: white;"><i class="fa-brands fa-linkedin  icon2"></i></a> 
+                        </div>
+                        <div class="col-sm-6 bg-light text-dark p-3" style="border-radius: 20px;">
+                            <div class="row p-2 ">
+                                <div class="col-sm-6">
+                                    
+                                    <form  method="post">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="Name" ><b>Your Name*</b></label> <br> 
+                                            <input type="text" name="Name" class="form-control" id="Name" > <br>
+                                            <label for="Phone" ><b>Phone Number</b></label> <br> 
+                                            <input type="number" name="Phone" class="form-control" id="Phone" > <br>
+                                            
+                                        </div>
+                                     </div>
+                                <div class="col-sm-6 ">
+                                           <label for="Email" ><b>Email Address*</b></label> <br> 
+                                            <input type="email" name="Email" class="form-control" id="Email"  placeholder="you@gmail.com"> <br>
+                                            
+                                </div>
+                                <div class="my-2">
+                                <label for="Msg" ><b>Message*</b></label> <br> 
+                                <textarea name="Message" id="Msg" class="form-control" placeholder="Write Your message here..." ></textarea>
+                                </div>
+                                <button class="btn btn-danger rounded-4 text-light fw-bold w-25"><i class="fa-solid fa-paper-plane text-light m-0 "></i>Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- contact Endddd  -->
+{% endblock %}

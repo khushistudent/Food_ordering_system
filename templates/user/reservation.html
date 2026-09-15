@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block abc %}
+<!-- Reservation start  -->
+        <div class="row my-3">
+            <span class="h text-center " style="font-family: cursive; font-size: 30px; font-weight: bold;">Book table</span>
+            <h1 class="text-center" style="font-size: 45px; font-weight: bold;">Make a <b class="h">Reservation</b></h1>
+            
+            <div class="col-sm-10 mx-auto text-center">
+                <p style="word-spacing: 10px;">Reserve Your table for a memorable dining experince. We <br> recommend booking 24 hours in advance for weekend evenings.</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 mx-auto">
+                    <div class="row mb-3">
+                        <div class="col-sm-6 bg-dark text-light p-3" style="border-radius: 20px;">
+                            <span style="font-size: 25px;">Contact Info</span>
+                            <p>We are happy to help you plan the perfect dining experience</p>
+                            <br>
+                            <i class="fa-solid fa-clock"></i> <span style="font-size: 15px; font-weight: bold;">OPENING HOURS</span> <br><span style="margin-left:7%;">Wed-Sun,9AM-11PM</span> <br> <br>
+                            <i class="fa-solid fa-phone"></i> <span style="font-size: 15px; font-weight: bold;">CALL FOR BOOKING</span> <br><span style="margin-left:7%;">+1(800)123-4567</span> <br> <br>
+                            <i class="fa-solid fa-users"></i> <span style="font-size: 15px; font-weight: bold;">GROUP DINING</span> <br><span style="margin-left:7%;">Special menus for 10+ guests</span> <br> <br>
+                            <i class="fa-solid fa-location-dot"></i> <span style="font-size: 15px; font-weight: bold;">LOCATION</span> <br><span style="margin-left:7%;">Lucknow Ring Road sector-5</span> <br> <br>
+                        </div>
+                        <div class="col-sm-6 bg-light text-dark p-3" style="border-radius: 20px;">
+                            <div class="row p-2 ">
+                                <div class="col-sm-6">
+                                 
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="name" ><b>Full Name*</b></label> <br> 
+                                            <input type="text" name="name" class="form-control" id="name" > <br>
+                                            <label for="email" ><b>Email Address*</b></label> <br> 
+                                            <input type="email" name="email" class="form-control" id="email" > <br>
+                                            <label for="date" ><b>Date*</b></label> <br> 
+                                            <input type="date" name="date" class="form-control" id="date" >
+                                        </div>
+                                     </div>
+                                <div class="col-sm-6 ">
+                                           <label for="phone" ><b>Phone Number*</b></label> <br> 
+                                            <input type="number" name="phone" class="form-control" id="phone"  placeholder="+1(800)000-0000"> <br>
+                                            <label for="guest" ><b>Number of Guests*</b></label> <br> 
+                                            <input type="number" name="guest" class="form-control" id="guest" > <br>
+                                            <label for="time" ><b>Time*</b></label> <br> 
+                                            <input type="time" name="time" class="form-control" id="time" >
+                                </div>
+                                <div class="my-2">
+                                <label for="msg" ><b>Special  Requests</b></label> <br> 
+                                <textarea name="message" id="msg" class="form-control" placeholder="Allergies,dietary needs,special occasions..."></textarea>
+                                </div>
+                                <button class="btn btn-danger rounded-4 text-light fw-bold"><i class="fa-solid fa-circle-check text-light p-1"></i>Confirm Reservation</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- Reservation Endddd  -->
+       
+{% endblock %}

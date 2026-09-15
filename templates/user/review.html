@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block abc %}
+<div class="row my-3">
+    <p class="h text-center" style="font-family: Freestyle Script; font-size: 40px; font-weight: bold;">What people say</p>
+    <h1 class="text-center" style="margin-top: -20px; font-weight: bold;">Our Customer <span class="h">Feedback</span></h1>
+      <button class="btn btn-danger w-25 open1"  data-bs-toggle="modal" data-bs-target="#feedbackModal">Open Feedback Form</button>
+     <!-- Feedback crad startttt -->
+         <div class="col-sm-10 mx-auto my-3">
+       <div class="row mb-3">
+        {% for review in reviews %}
+        <div class="col-sm-4 p-3">
+            <div class="card p-5 shadow-lg" style="background-color: antiquewhite;" id="cardid">
+           <!-- <div class="icons">
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                </div>  -->
+               <p>{{ review.Feedback }}</p>
+               <img src="/{{review.Image}}" alt="" class="img-fluid " 
+              style="max-height: 50px; max-width: 50px; border-radius: 50%; border: 2px solid red;"> 
+              <span style="font-weight: bold; margin-left: 60px; margin-top: -45px; color: red; font-weight: bold;">{{ review.Full_Name }}</span>
+            </div>
+        </div> 
+        {% endfor %}
+        </div>
+        <!-- Feedback card enddddd -->
+
+        <!-- Form Feedback -->
+       <!-- Modal -->
+<div class="modal fade" id="feedbackModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="feedbackModalLabel "><span class="h fw-bold">Feedback Form</span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form action="" method="POST" enctype="multipart/form-data" id="formreview">
+             {% csrf_token %}
+               <label for="name" class="form-label"><b>Name<span class="h fw-bold">*</span> :</b></label>   <br>
+              <input type="text" class="form-control p-2 my-2" name="name" placeholder="Enter Your Full Name..." id="name" required>
+              
+               
+          <label for="msg"  class="form-label"><b>Your Feedback :</b></label>   <br>
+             <textarea name="msg" id="msg" placeholder="Tell us about your experience...." class="form-control"></textarea>
+
+            
+              <label for="img" id="img" class="form-label"><b>Choose file:</b></label>
+              <input type="file" class="form-control" name="Image" >
+              <br> <br>
+              <button class="btn btn-danger rounded-pillow"><b>Submit</b></button>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>
+        <!-- Feedback form enddd -->
+   </div>
+</div>
+{% endblock %}
