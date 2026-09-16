@@ -3,6 +3,8 @@ from .models import *
 # Create your views here.
 def home(request):
     return render(request,"user/home.html")
+def Register(request):
+    return render(request,"user/Register.html")
 def about(request):
     return render(request,"user/about.html")
 
