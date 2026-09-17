@@ -254,7 +254,16 @@
     margin: auto;
   box-shadow: 3px 3px 8px grey, -3px -3px 8px grey;
 }
-
+.register{
+    margin-left: 4%;
+}
+.input1{
+    background-color: rgba(223, 220, 220, 0.217);
+}
+.imgre{
+    object-fit: cover;
+    max-height: 100%;
+}
     </style>
 </head>
 <body>
@@ -294,8 +303,8 @@
           <a href="{% url 'reservation' %}" class="navbar-brand">Reservation</a>
           <a href="{% url 'review' %}" class="navbar-brand">Reviews</a>
           <a href="{% url 'contact' %}" class="navbar-brand">Contact</a>
-          <a href="#" class="navbar-brand">Registration</a>
-          <a href="#" class="navbar-brand">Login</a>
+          <a href="{% url 'Register' %}" class="navbar-brand">Registration</a>
+          <a href="{% url 'login' %}" class="navbar-brand">Login</a>
           
     <a href="{% url 'login' %}">
    

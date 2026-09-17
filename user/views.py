@@ -1,22 +1,40 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from .models import *
+
 # Create your views here.
 def home(request):
     return render(request,"user/home.html")
 def Register(request):
+    if request.method=="POST":
+         Name=request.POST.get("name")
+         mobile=request.POST.get("mobile")
+         email=request.POST.get("email")
+         password=request.POST.get("password")
+         Image=request.FILES["fu"]
+         Address=request.POST.get("address")
+         formdata=tblregister.objects.all().filter(Email=email).count()
+         if formdata==0:
+              tblregister(Full_Name=Name,mobile= mobile,Email=email,Password=password,Image=Image,Address=Address).save()
+              return HttpResponse("<script> alert('You are registered..'); location.href='/register/'</script>")
+         else:
+              return HttpResponse("<script> alert('You are already register..'); location.href='/register/'</script>")
     return render(request,"user/Register.html")
 def about(request):
     return render(request,"user/about.html")
 
 def login(request):
-
-    if request.method == "POST":
-         Name=request.POST.get("name")
-         password=request.POST.get("pass")
-         
-         tbllogin(Full_Name=Name,password=password).save()
-         return redirect("menu")
-    return render(request,"user/login.html")
+     
+     if request.method == "POST":
+          Email=request.POST.get("email")
+          password=request.POST.get("pass")
+          formdata=tblregister.objects.all().filter(Email=Email,Password=password).count()
+          if formdata==1:
+              tbllogin.objects.create(Email=Email,password=password)
+              return HttpResponse("<script>alert('You are login successfully');location.href='/menu/'</script>")
+          else:
+               return HttpResponse("<script>alert('Your email or password lis incorrect. Please register first...');location.href='/login/'</script>")
+            #    return render(request,'user/login.html',{"msg":"Your Email or Password is incorrect.."})
+     return render(request,"user/login.html")
 
 
 def menu(request):

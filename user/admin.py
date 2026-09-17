@@ -18,5 +18,9 @@ class tblreviewAdmin(admin.ModelAdmin):
 admin.site.register(tblreview,tblreviewAdmin)
 
 class tblloginAdmin(admin.ModelAdmin):
-    list_display=("id", "Full_Name","password")
+     list_display=("id", "Email","password")
 admin.site.register(tbllogin,tblloginAdmin)
+
+class tblregisterAdmin(admin.ModelAdmin):
+    list_display=("id", "Full_Name","mobile","Email","Password","Image","Address")
+admin.site.register(tblregister,tblregisterAdmin)

@@ -39,5 +39,14 @@ class tblreview(models.Model):
 
 # tbl login form
 class tbllogin(models.Model):
-    Full_Name=models.CharField(max_length=20)
+    Email=models.EmailField(max_length=100,null=True)
     password=models.CharField(max_length=15,null=True)
+
+#tbl register form
+class tblregister(models.Model):
+    Full_Name=models.CharField(max_length=50)
+    mobile=models.CharField(max_length=15)
+    Email=models.EmailField(unique=True)
+    Password=models.CharField(max_length=15,null=True )
+    Image=models.ImageField(upload_to="static/picture/",null=True)
+    Address=models.TextField(blank=True)

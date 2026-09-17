@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block abc %}
+
+
+        <div class="row py-2 register my-4">
+            <div class="col-sm-6 p-3 mx-auto shadow-lg rounded-2" style="background: white;">
+                <p class="h4">Complete your <b class="h">Registration...</b> </p>
+                 <form action="" method="post" enctype="multipart/form-data">
+                            <!-- cross side request forgery -->
+                            {% csrf_token %}  
+                            <input type="text" required placeholder="Name..." name="name" class="form-control input1"> <br>
+                            <input type="number" required placeholder="Mobile...." name="mobile" class="form-control input1 "> <br>
+                            <input type="email" required placeholder="Email...." name="email" class="form-control input1"> <br>
+                            
+                            <input type="password" required placeholder="Password...." name="password" class="form-control input1"> <br>
+                            <input type="file" name="fu" required class="form-control input1"><br>
+                            <textarea name="address" id="" class="form-control txta input1" placeholder="Address"></textarea>
+                            <a href="{% url 'login' %}" class="float-end fw-bold " style="text-decoration: none; color: black;">Already Registered? Login Now...</a>
+                            <!-- <textarea name="message" id="" class="form-control msg" required placeholder="Message..."></textarea><br> -->
+                            <input type="submit" value="Register Now" class="btn1 my-2 btn  btn-success">
+                        </form>
+            </div>
+    <div class="col-sm-6">
+        <img src="{% static 'images/resta2.avif' %}" alt="" class="img-thumbnail imgre">
+    </div>
+</div>
+{% endblock %}
