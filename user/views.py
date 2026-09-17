@@ -32,7 +32,7 @@ def login(request):
               tbllogin.objects.create(Email=Email,password=password)
               return HttpResponse("<script>alert('You are login successfully');location.href='/menu/'</script>")
           else:
-               return HttpResponse("<script>alert('Your email or password lis incorrect. Please register first...');location.href='/login/'</script>")
+               return HttpResponse("<script>alert('Your email or password is incorrect. Please register first...');location.href='/login/'</script>")
             #    return render(request,'user/login.html',{"msg":"Your Email or Password is incorrect.."})
      return render(request,"user/login.html")
 
