@@ -14,7 +14,7 @@
        }
         body{
             background-color: antiquewhite;
-            padding-top: 140px;
+            padding-top: 230px;
             overflow-x: hidden;
         }
         .head{
@@ -23,7 +23,7 @@
         }
         .header{
             background-color: black;
-            padding-left: 6%;
+             padding-left: 6%; 
             color: white;
             padding: 5px;
             position: fixed;
@@ -31,6 +31,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
+            box-sizing: border-box;
         }
         .fa-solid{
             color: orangered;
@@ -264,23 +265,33 @@
     object-fit: cover;
     max-height: 100%;
 }
+/* .btn2{
+    padding: 3px;
+    margin-top: -3px;
+    margin-left: 5%;
+} */
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <!-- Small header starttttt -->
        <div class="row header">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <i class="fa-solid fa-phone fa-spin "></i> <b>+919923456789</b>
             <i class="fa-solid fa-envelope fa-spin"></i> <b>k@gmail.com</b>
             <i class="fa-solid fa-location-dot fa-spin"></i> <b>sector-5 Vikas Nager Lucknow</b>
         </div>
        
-        <div class="col-sm-6 t">
+        <div class="col-sm-7 t">
             <i class="fa-brands fa-facebook i1"></i>
             <i class="fa-brands fa-instagram "></i>
             <i class="fa-brands fa-youtube "></i>
             <i class="fa-brands fa-linkedin i1 "></i>
+             <!-- <a href="{% url 'login' %}">
+   
+    <button class="btn btn-warning text-light fw-bold  btn2"><span>Order Now</span> </button>
+    
+  </a> -->
         </div>
        </div>
         <!-- Small header enddd -->
@@ -299,18 +310,20 @@
      
           <a href="{% url 'home' %}" class="navbar-brand  ">Home</a>
           <a href="{% url 'about' %}" class="navbar-brand">About</a>
+          <a href="{% url 'Register' %}" class="navbar-brand">Registration</a>
+          <a href="{% url 'login' %}" class="navbar-brand">Login</a>
           <a href="{% url 'menu' %}" class="navbar-brand">Menu</a>
           <a href="{% url 'reservation' %}" class="navbar-brand">Reservation</a>
           <a href="{% url 'review' %}" class="navbar-brand">Reviews</a>
           <a href="{% url 'contact' %}" class="navbar-brand">Contact</a>
-          <a href="{% url 'Register' %}" class="navbar-brand">Registration</a>
-          <a href="{% url 'login' %}" class="navbar-brand">Login</a>
+          
+          
           
     <a href="{% url 'login' %}">
    
     <button class="btn btn-warning text-light fw-bold"><span>Order Now</span> </button>
     
-  </a>
+  </a> 
 </nav>
             </div>
              

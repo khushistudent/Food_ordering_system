@@ -29,24 +29,24 @@
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <label for="name" ><b>Full Name*</b></label> <br> 
-                                            <input type="text" name="name" class="form-control" id="name" > <br>
+                                            <input type="text" name="name" class="form-control" id="name" required > <br>
                                             <label for="email" ><b>Email Address*</b></label> <br> 
-                                            <input type="email" name="email" class="form-control" id="email" > <br>
+                                            <input type="email" name="email" class="form-control" id="email" required > <br>
                                             <label for="date" ><b>Date*</b></label> <br> 
-                                            <input type="date" name="date" class="form-control" id="date" >
+                                            <input type="date" name="date" class="form-control" id="date" required >
                                         </div>
                                      </div>
                                 <div class="col-sm-6 ">
                                            <label for="phone" ><b>Phone Number*</b></label> <br> 
-                                            <input type="number" name="phone" class="form-control" id="phone"  placeholder="+1(800)000-0000"> <br>
+                                            <input type="number" name="phone" class="form-control" id="phone"  placeholder="+1(800)000-0000" required> <br>
                                             <label for="guest" ><b>Number of Guests*</b></label> <br> 
-                                            <input type="number" name="guest" class="form-control" id="guest" > <br>
+                                            <input type="number" name="guest" class="form-control" id="guest"  required> <br>
                                             <label for="time" ><b>Time*</b></label> <br> 
-                                            <input type="time" name="time" class="form-control" id="time" >
+                                            <input type="time" name="time" class="form-control" id="time" required>
                                 </div>
                                 <div class="my-2">
                                 <label for="msg" ><b>Special  Requests</b></label> <br> 
-                                <textarea name="message" id="msg" class="form-control" placeholder="Allergies,dietary needs,special occasions..."></textarea>
+                                <textarea name="message" id="msg" class="form-control" placeholder="Allergies,dietary needs,special occasions..." required></textarea>
                                 </div>
                                 <button class="btn btn-danger rounded-4 text-light fw-bold"><i class="fa-solid fa-circle-check text-light p-1"></i>Confirm Reservation</button>
                                 </form>

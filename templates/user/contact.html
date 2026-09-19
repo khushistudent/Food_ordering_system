@@ -33,20 +33,20 @@
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <label for="Name" ><b>Your Name*</b></label> <br> 
-                                            <input type="text" name="Name" class="form-control" id="Name" > <br>
+                                            <input type="text" name="Name" class="form-control" id="Name" required> <br>
                                             <label for="Phone" ><b>Phone Number</b></label> <br> 
-                                            <input type="number" name="Phone" class="form-control" id="Phone" > <br>
+                                            <input type="number" name="Phone" class="form-control" id="Phone" required > <br>
                                             
                                         </div>
                                      </div>
                                 <div class="col-sm-6 ">
                                            <label for="Email" ><b>Email Address*</b></label> <br> 
-                                            <input type="email" name="Email" class="form-control" id="Email"  placeholder="you@gmail.com"> <br>
+                                            <input type="email" name="Email" class="form-control" id="Email"  placeholder="you@gmail.com" required > <br>
                                             
                                 </div>
                                 <div class="my-2">
                                 <label for="Msg" ><b>Message*</b></label> <br> 
-                                <textarea name="Message" id="Msg" class="form-control" placeholder="Write Your message here..." ></textarea>
+                                <textarea name="Message" id="Msg" class="form-control" placeholder="Write Your message here..." required ></textarea>
                                 </div>
                                 <button class="btn btn-danger rounded-4 text-light fw-bold w-25"><i class="fa-solid fa-paper-plane text-light m-0 "></i>Send Message</button>
                                 </form>
